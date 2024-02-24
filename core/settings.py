@@ -1,5 +1,9 @@
 import os
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -152,11 +156,16 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
-MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+AZURE_ACCOUNT_NAME = os.environ.get('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.environ.get('AZURE_ACCOUNT_KEY')
+AZURE_CONTAINER = os.environ.get('AZURE_CONTAINER')
 
-MEDIA_ROOT = [
-    os.path.join(BASE_DIR, 'media')
-]
+AZURE_SAS_TOKEN=os.environ.get('AZURE_SAS_TOKEN')
+
+
+MEDIA_URL ='https://%s.blob.core.windows.net/%s/' % (AZURE_ACCOUNT_NAME, AZURE_CONTAINER)
+MEDIA_ROOT='http://{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
 STATIC_URL = '/static/'
 
