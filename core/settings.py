@@ -1,4 +1,4 @@
-
+import os
 from pathlib import Path
 
 
@@ -9,9 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=q9fn6+=hda_yo@$m9o7itxvf%c4m*2&ge#3qlq2c)7&w+&9!d'
 
 
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
+
 
 ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 
@@ -146,3 +151,5 @@ CORS_ALLOW_METHODS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media' #Ruta donde se guardaran las imagenes subidas por el CKEditor
+
+STATIC_URL = '/static/'
