@@ -151,9 +151,15 @@ CORS_ALLOW_METHODS = [
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = BASE_DIR / 'media' #Ruta donde se guardaran las imagenes subidas por el CKEditor
+MEDIA_ROOT = [
+    os.path.join(BASE_DIR, 'media')
+]
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 
 if not DEBUG:
