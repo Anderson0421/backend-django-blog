@@ -141,9 +141,6 @@ CKEDITOR_CONFIGS = {
 }
 CKEDITOR_UPLOAD_PATH = 'uploads/' #Ruta donde se guardaran las imagenes subidas por el CKEditor
 
-CORS_ALLOWED_ORIGINS  =[
-    'http://localhost:5173',
-]
 
 
 CORS_ALLOWED_ORIGINS = [
