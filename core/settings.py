@@ -145,11 +145,12 @@ CORS_ALLOWED_ORIGINS  =[
     'http://localhost:5173',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
     'https://blog-react-indol.vercel.app/',
+    'https://blog-react-indol.vercel.app',
 ]
+CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOW_METHODS = [
     'DELETE',
