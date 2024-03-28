@@ -1,10 +1,6 @@
-from rest_framework import routers
-from .api import PostViewSet
+from .views import *
+from django.urls import path
 
-router = routers.DefaultRouter()
-
-
-router.register('api/posts/v1',PostViewSet, 'posts')
-
-
-urlpatterns = router.urls
+urlpatterns = [
+    path('list/posts',PostViewList.as_view(), name='post-list'),
+]
