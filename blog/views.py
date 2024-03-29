@@ -12,3 +12,12 @@ class PostViewList(APIView):
         posts = Post.objects.all()
         serializer = PostSerializers(posts, many=True)
         return Response(serializer.data)
+
+class PostDetailView(APIView):
+    permission_classes = (permissions.AllowAny,)
+    
+    def get(self, request, pk , format=None):
+        post = Post.objects.get(pk=pk)
+        serializer = PostSerializers(post)
+        return Response(serializer.data)
+        
