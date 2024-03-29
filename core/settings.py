@@ -144,7 +144,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/' #Ruta donde se guardaran las imagenes subidas 
 
 
 CORS_ALLOWED_ORIGINS = [
-    'https://blog-react-indol.vercel.app',
+    'https://blog-anderdev.vercel.app',
     'http://localhost:5173'
 ]
 CORS_ALLOW_ALL_ORIGINS = False
