@@ -3,6 +3,7 @@ from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
+    excerpt = models.TextField()
     content = RichTextField()
     bg_image = models.ImageField(upload_to='blog/')
     created_at = models.DateTimeField(auto_now_add=True)

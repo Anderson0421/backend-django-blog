@@ -130,13 +130,9 @@ REST_FRAMEWORK = {
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ]
+        'toolbar': 'full',
+        
+        
     }
 }
 CKEDITOR_UPLOAD_PATH = 'uploads/' #Ruta donde se guardaran las imagenes subidas por el CKEditor
