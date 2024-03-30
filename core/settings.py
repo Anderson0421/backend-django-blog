@@ -75,12 +75,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'railway',
-        'USER':'root',
-        'PASSWORD':'cHg2BDDcd3f5a2CD4CbBbc26B4DGCHG6',
-        'HOST':'monorail.proxy.rlwy.net',
-        'PORT':'51904',
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'blog',
+        'USER':'anderdev',
+        'PASSWORD':os.environ.get('DB_PASSWORD'),
+        'HOST':os.environ.get('DB_HOST'),
+        'PORT':''
     }
 }
 
@@ -147,6 +147,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://blog-anderdev.vercel.app',
     'http://localhost:5173'
 ]
+
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOW_METHODS = [
